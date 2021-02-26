@@ -1,0 +1,98 @@
+30/9/2020
+El profesor es el cliente y solicita un sistema sobre un torneo de pádel que él organiza, este torneo tiene una edición anual, y quiere guardar la informarción en una BD.
+	1ºSUBSISTEMA: Información referente de jugadores y entrenadores:
+		1.1. Insertar nuevo jugador en la BD
+		1.2. Datos de los jugadores: nombre(secuencia de 30 caracteres, apellidos(Secuencia de 60), teléfono(secuencia de 12 caracteres numéricos menos el primero que puede ser +), correo eletrónico(secuencia de 50 caracteres que debe contener la @)
+		1.3. Insertar entrenador.
+		1.4. Los datos son los mismos que los del jugador.
+		1.5. Puedo emparejar a dos jugadores en una edición concreta del torneo.
+		1.6. Puedo asignar un entrenador a una pareja de jugadores en una edición del torneo.
+		1.7. Asignar una posición en el ránking de una edición a una pareja.
+		1.8. Consultar entrenadores y las parejas a las que entrenan en una edición.
+		1.9. Mostrar jugadores no inscritos en una edición.
+		1.10. Cambiar entrenador de una pareja en una edición.
+		1.11. Mostrar parejas por ranking en una edición. Le paso un número y me mjestra las parejas desde la primera hasta la que le de.
+		1.12. Condiciones que se deben cumplir:
+			-Una pareja solo puede tener un entrenador.
+			-No puede haber dos parejas en la misma posición en la misma edición
+			-Un jugador no puede pertenecer a dos parejas distintas en la misma edición.
+	2º SUBSISTEMA USUARIO/ENTRADAS:
+		2.1.Insertar usuarios con Nombres, apellidos, correo igual que en jugadores junto a una contraseña(30 caracteres) y un campo de notificaciones(SI/NO).
+		2.2. Insertar tipos de entrada.
+		2.3. Asignar cantidad a cada tipo de entrada en cada edición.
+		2.4. Asignar precio a cada tipo de entrada en cada edición.
+		2.5. El sistema me debe dejar iniciar una compra. Debe guardar el usuario que realiza la compra, la edición y la fecha que realiza la compra.
+		2.6. Una vez iniciada la compra el sistema me deja elegir la cantidad y tipos de entrada que quiero.
+		2.7. El sistema me debe dejar finalizar una compra, cuando el usuario termine el sistema debe marcar la compra como finalizada y guardar la fecha en la que se finaliza. Aparte debe de mostrar al usuario un ID de compra, el tipo de entradas y el total de cada una, y el total a pagar.
+		2.8. El usuario debe poder pagar la compra. Una vez pagada el sistema guarda la compra como pagada, guarda la fecha de la compra, le debe mostrar un ID de compra como señal de que ha pagado, el tipo de entradas y el total de cada una, y el total a pagar.
+		2.9. Consultar el dinero obtenido por la venta de entradas en una edición.
+		2.10. Mostrar las compras finalizadas de un usuario en una edición con la hora de finalización, y de cada compra finalizada que esté pagada, la hora de compra, de todas el tipo de entradas y el total de cada una, y el total que  debe pagar o pagó.
+		2.11. Condiciones a cumplir:
+			-No puedo pagar una compra que no esté finalizada ni finalizar una compra no inicializada.
+			-Un usuario no puede inicializar una compra si tiene otra inicializada sin finalizar.
+			-Un usuario solo puede pagar una compra por día.
+	3º SUBSISTEMA ÁRBITROS/CONTRATACIÓN
+		3.1. Insertar nuevo árbitro con su nombre, apellidos, correo y teléfono.
+		3.2. Hacer una oferta a un árbitro para una edición por una cantidad de dinero. Guardar la fecha de la oferta, el nombre del árbitro, cantidad ofrecida y edición.
+		3.3. El árbitro debe poder aceptar ofertas, guardaremos la fecha en que acepte.
+		3.4. También puede poder rechazar y guardar la fecha de rechazo.
+		3.5. También puede hacerme una contraoferta. Guardamos la cantidad que solicita, la fecha en la que se realiza la contraoferta, la edición, etc.
+		3.6. El sistema me debe dejar aceptar contraofertas(guardar fecha).
+		3.7. El sistema me debe dejar rechazar contraofertas(guardar fecha).
+		3.8. Retirar oferta realizada a un árbitro.
+		3.9. Mostrar ofertas realizadas a un árbitro en una edición(con fecha, dinero y estado de la oferta).
+		3.10. Mostrar ofertas aceptadas en una edición, fecha de la oferta, cantidad, árbitro y fecha que aceptó.
+		3.11. Condiciones:
+			-No puedo retirar una oferta sin responder, aceptada o con contraoferta.
+			-¿?
+			-Solo puedo realizar una oferta si no hay una contraoferta o si todas las ofertas tienen contraofertas.
+			-¿?
+			-¿?
+			-El árbitro no me puede hacer una contraoferta si ya he aceptado o rechazado una contraoferta anterior.
+	4ºSUBSISTEMA PISTAS/PARTIDOS
+		4.1. Insertar pistas con nombre(secuencia de 30 car) y la capacidad(entero de hasta 4 dígitos)
+		4.2. Insertar partido con edición, dos parejas que se enfrentan, fecha en que se juega, pista donde se juega y árbitro del partido.
+		4.3. Añadir resultado de partido(sets ganados por cada pareja)
+		4.4. Mostrar partidos en una fecha y de cada partido sus detalles.
+		4.5. Mostrar los partidos que se juegan en una pista en una edición.
+		4.6. Mostrar partidos finalizados con el resultado.
+		4.7. Modificar árbitro de un partido.
+		4.8. Mostrar partidos asignados a un árbitro en una edición.
+		4.9. Mostrar pistas en las que en la edición no se juegan partidos.
+		4.10. Condiciones:
+			-No se pueden solapar el horario de dos partidos con menos de 3 horas de diferencia.
+			-En una misma pista no se pueden jugar más de 2 partidos al día.
+			-Solo puedo asignar árbitros con una oferta aceptada en esa edición.
+			-Un árbitro no puede arbitrar más de un partido al día.
+			-No se puede asignar un resultado a un partido cuya fecha es posterior a la actual.
+	5º SUBSISTEMA Personal/Horarios
+		5.1. Insertar un nuevo personal con su nombre, apellidos, teléfono y correo.
+		5.2. Asignar un trabajador a una edición concreta dándole un salario por hora en esa edición.
+		5.3. Asignar un horario de trabajo a un trabajador en una edición. Fecha de inicio, de fin(mismo día pero cambiando hora) y pista en la que trabajará.
+		5.4. Mostrar trabajadores libres de una edición estos son los trabajadores con una edición asignada pero sin horario.
+		5.5. Mostrar horario de trabajo de un trabajador en una edición, ordenado por fecha.
+		5.6. Modificar salario por hora de un trabajador.
+		5.7. Mostrar personal que no trabaja en una edición.
+		5.8. Mostrar el total en salarios en una edición.
+		5.9. Mostrar trabajadores, con sus detalles, de una edición ordenados por horas trabajadores, de mayor a menor.
+		5.10. Condiciones:
+			-No se pueden solapar los horarios de un trabajadores con menos de 1 hora de diferencia.
+			-No se puede asignar al mismo trabajador la misma pista más de 2 veces en el mismo día.
+			-No puede trabajar más de 8 horas diarias.
+			-No se puede modificar el salario del trabajador si ya ha realizado algún trabajo.
+	6º Patrocinadores/Colaboradores
+		6.1. Insertar una nueva entidad con su nombre, persona de contacto(secuencia de 80 caracteres), correo y teléfono de esta.
+		6.2. Registrar un colaborador en una edición, se registra una entidad guardada como colaborador en una edición ofreciendo una cantidad de dinero.
+		6.3. Representar que una entidad patrocina una edición, parecido al anterior.
+		6.4. Mostrar entidades que no colaboran o patrocinan en una edición.
+		6.5. Dinero obtenido en una edición gracias a las aportaciones de los colaboradores y patrocinadores.
+		6.6. Modificar el dinero aportado por un colaborador.
+		6.7. Lo mismo con patrocinador.
+		6.8. Mostrar entidades por dinero aportado (mayor a menor) en distintas ediciones.
+		6.9. Eliminar colaborador de una edición.
+		6.10. Igual con patrocinador.
+		6.11. Condiciones:
+			-Una entidad no puedo ser colaborador y patrocinador en la misma edición
+			-No se puede modificar el dinero aportado por una entidad una vez empezado el torneo.
+			-Una entidad puede ser eliminado solo si no ha comenzado el torneo.
+	7ºSUBSISTEMA MATERIALES/PEDIDOS

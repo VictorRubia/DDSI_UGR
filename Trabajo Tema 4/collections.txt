@@ -1,0 +1,76 @@
+# Entrar en mongo
+mongo
+#Basde de datos
+    #listar
+    db
+    #Añadir y mover a esa db
+    use"x" --> use ddsi
+
+#Añadir colección
+db.edicion.insertOne({"anio": 2020})
+db.pista.insertMany
+(
+    {
+     "id_pista": 0,
+     "Nombre": "Pista Central",
+     "Capacidad": 1000
+     },
+    {
+     "id_pista": 1,
+     "Nombre": "Turno 1",
+     "Capacidad": 60
+     },
+    {
+     "id_pista": 2,
+     "Nombre": "Turno 2",
+     "Capacidad": 60
+     }
+)
+db.jugador.insertMany
+(
+    [{   "id_jugador": 1,
+        "Nombre": "Pablo"
+    },
+    {   "id_jugador": 2,
+        "Nombre": "Victor"
+    },
+    {   "id_jugador": 3,
+        "Nombre": "Andres"
+    },
+    {   "id_jugador": 4,
+        "Nombre": "Antonio"
+    }]
+);
+
+#Select de SQL
+db.jugador.find({})
+    #Where
+    db.jugador.find({"Nombre": "Pablo"})
+    #Proyeccion -- 0 desactiva, 1 activa
+    db.jugador.find({"Nombre": "Pablo"}, {"Nombre": 0, "id_jugador": 1});
+
+#Update
+db.jugador.update(
+	{
+		"Nombre": "Pablo"
+	},
+	{
+		$set :
+		{
+			"Apellidos" : "Moreno Mancebo",
+			"id_jugador" : 0
+		}
+	}
+)
+#Delete
+db.jugador.deleteOne({"Nombre": "Andres"})
+
+#Conexion con python
+from pymongo import MongoClient
+# Enlazar mongod
+mongoClient = MongoClient('localhost', 27017)
+# Db
+
+db = mongoClient.ddsi
+# colección
+documento_colecc_jugador = db.jugador

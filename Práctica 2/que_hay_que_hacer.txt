@@ -1,0 +1,21 @@
+Realizar los esquemas externos para todos los procesos y almacenes de DFD0 (armazón) y DFD1. Empezamos por DFD1.
+
+Obtener el modelo conceptual de la BD mediante la integracion de los esquemas externos de DFD0.
+
+Realizar el paso a tablas del modelo E/R
+
+Identificar las dependencias funcionales que se cumplen en cada tabla obtenida en el diseño lógico.
+
+Aplicar la Normalización de BD relacionales que hemos estudiado en el Tema 3 para refinar el diseño lógico.
+
+Realizar el diseño físico escribiendo las sentencias SQL de creación de tablas, añadiendo las restricciones de integridad que sean necesarias.
+
+Escribir algunas sentencias SQL de inserción de unas pocas tuplas en todas las tablas, para disponer de datos con los que realizar algunas pruebas.
+
+ENTREGA en .PDF:
+
+1º. Esquemas externos de todos los procesos y almacenes de DFD0 y DFD1.
+2º. Esquema E/R completo del sistema.
+3º. Conjunto de tablas obtenido del esquema E/R.
+4º. Dependencias funcionales, proceso de Normalización realizado y conjunto de tablas obtenido de dicho proceso, junto con las claves primarias y externas correspondientes.
+5º. Sentencias SQL de creación de las tablas obtenidas y de inserción de tuplas.

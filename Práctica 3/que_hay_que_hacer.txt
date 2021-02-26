@@ -1,0 +1,26 @@
+1º. Hacer un trigger de cada subsistema.
+2º. Implementar en Java una funcionalidad.
+
+Disparador sobre Un jugador no puede pertenecer a dos parejas distintas en la misma edición (R.S. 1.2.)
+
+Función sobre Mostrar jugadores no inscritos en una edición. (R.F. 1.7.)
+
+Subsistema 2:
+
+Disparador sobre Un usuario no puede iniciar una nueva compra si ya tiene una iniciada y no finalizada. (R.S. 2.2)
+
+Función sobre Iniciar compra (R.F. 2.5)
+
+
+Subsistema 3:
+
+Disparador sobre No se puede realizar una nueva contraoferta a un árbitro si este ya ha aceptado o rechazado una contraoferta en esa edición (el hecho de que una oferta solo pueda tener una única contraoferta ya lo debe controlar el diagrama E/R). (R.S. 3.4.)
+
+Función sobre Realizar una contraoferta (R.F. 3.5.)
+
+Subsistema 4: 
+
+Disparador sobre En una misma pista no se pueden jugar más de dos partidos en el mismo día. (R.S. 4.2.)
+
+Función sobre Insertar un partido (R.F. 4.2.)
+
